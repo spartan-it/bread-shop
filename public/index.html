@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Daily Crust — Artisan Bread Baked Fresh</title>
+  <meta name="description" content="The Daily Crust — handcrafted artisan breads baked fresh every morning. Sourdough, baguettes, ciabatta, and more at your workplace." />
+  <meta name="keywords" content="artisan bread, bakery, sourdough, fresh bread, workplace bakery" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="logo">🌾 THE DAILY CRUST</a>
+      <ul class="nav-links">
+        <li><a href="#menu">Breads</a></li>
+        <li><a href="#about">Story</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#order">Order</a></li>
+      </ul>
+      <a href="#order" class="btn-nav" id="pre-order-btn">Pre-Order</a>
+      <button class="burger-toggle" id="burger-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#menu">Breads</a>
+      <a href="#about">Story</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#order">Order</a>
+      <a href="#order" class="btn-mobile-cta">Pre-Order Today</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <img src="bread_hero.jpg" alt="Freshly baked artisan bread" class="hero-bg-img" />
+    <div class="hero-content">
+      <div class="hero-eyebrow">🌾 Baked Fresh · Every Morning · At Your Workplace</div>
+      <h1 class="hero-title">
+        <em>Bread the Way</em><br />
+        It Was Meant<br />
+        To Be
+      </h1>
+      <p class="hero-subtitle">
+        Slow-fermented sourdoughs. Crisp baguettes. Pillowy focaccia.
+        Real bread, real ingredients, delivered straight to your office.
+      </p>
+      <div class="hero-cta">
+        <a href="#menu" class="btn-primary" id="see-breads-btn">See Today's Breads</a>
+        <a href="#about" class="btn-outline" id="learn-story-btn">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-badges">
+      <div class="badge" id="badge-ferment"><span class="badge-icon">⏱</span><span>48h Fermentation</span></div>
+      <div class="badge" id="badge-flour"><span class="badge-icon">🌾</span><span>Stoneground Flour</span></div>
+      <div class="badge" id="badge-preservatives"><span class="badge-icon">🚫</span><span>No Preservatives</span></div>
+      <div class="badge" id="badge-daily"><span class="badge-icon">🌅</span><span>Baked at 5am</span></div>
+    </div>
+  </section>
+
+  <!-- RIBBON -->
+  <div class="ribbon">
+    <div class="ribbon-track">
+      <span>SOURDOUGH &nbsp;·&nbsp; BAGUETTE &nbsp;·&nbsp; FOCACCIA &nbsp;·&nbsp; CIABATTA &nbsp;·&nbsp; RYE &nbsp;·&nbsp; BRIOCHE &nbsp;·&nbsp; CHALLAH &nbsp;·&nbsp; MULTIGRAIN &nbsp;·&nbsp;</span>
+      <span>SOURDOUGH &nbsp;·&nbsp; BAGUETTE &nbsp;·&nbsp; FOCACCIA &nbsp;·&nbsp; CIABATTA &nbsp;·&nbsp; RYE &nbsp;·&nbsp; BRIOCHE &nbsp;·&nbsp; CHALLAH &nbsp;·&nbsp; MULTIGRAIN &nbsp;·&nbsp;</span>
+      <span>SOURDOUGH &nbsp;·&nbsp; BAGUETTE &nbsp;·&nbsp; FOCACCIA &nbsp;·&nbsp; CIABATTA &nbsp;·&nbsp; RYE &nbsp;·&nbsp; BRIOCHE &nbsp;·&nbsp; CHALLAH &nbsp;·&nbsp; MULTIGRAIN &nbsp;·&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- MENU -->
+  <section id="menu" class="menu-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">— Today's Selection —</p>
+        <h2 class="section-title">Baked This Morning</h2>
+        <p class="section-sub">Every loaf is shaped by hand and baked in a stone deck oven. Limited quantities daily.</p>
+      </div>
+
+      <div class="menu-tabs">
+        <button class="tab active" data-tab="loaves" id="tab-loaves">Loaves</button>
+        <button class="tab" data-tab="rolls" id="tab-rolls">Rolls & Buns</button>
+        <button class="tab" data-tab="specialty" id="tab-specialty">Specialty</button>
+      </div>
+
+      <div class="bread-grid" id="bread-grid">
+
+        <!-- LOAVES -->
+        <div class="bread-card" data-tab="loaves" id="card-sourdough">
+          <div class="card-tag">SIGNATURE</div>
+          <div class="card-visual">🍞</div>
+          <div class="card-info">
+            <h3>Country Sourdough</h3>
+            <p>Wild yeast starter, 48-hour cold ferment, open crumb, crackling crust</p>
+            <div class="card-meta">
+              <div class="card-detail"><span>800g</span></div>
+              <div class="card-detail"><span>Whole Wheat Blend</span></div>
+            </div>
+            <div class="card-footer">
+              <span class="price">$9</span>
+              <button class="btn-add" id="add-sourdough">Add to Order</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bread-card" data-tab="loaves" id="card-rye">
+          <div class="card-visual">🟫</div>
+          <div class="card-info">
+            <h3>Dark Rye</h3>
+            <p>70% rye flour, caraway seeds, dense and moist with a rich earthy depth</p>
+            <div class="card-meta">
+              <div class="card-detail"><span>700g</span></div>
+              <div class="card-detail"><span>Rye Flour</span></div>
+            </div>
+            <div class="card-footer">
+              <span class="price">$8</span>
+              <button class="btn-add" id="add-rye">Add to Order</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bread-card" data-tab="loaves" id="card-multigrain">
+          <div class="card-tag new">NEW</div>
+          <div class="card-visual">🌾</div>
+          <div class="card-info">
+            <h3>Seeded Multigrain</h3>
+            <p>Five grains, sunflower seeds, pumpkin seeds, sesame — nutty and hearty</p>
+            <div class="card-meta">
+              <div class="card-detail"><span>750g</span></div>
+              <div class="card-detail"><span>Mixed Grains</span></div>
+            </div>
+            <div class="card-footer">
+              <span class="price">$10</span>
+              <button class="btn-add" id="add-multigrain">Add to Order</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bread-card" data-tab="loaves" id="card-ciabatta">
+          <div class="card-visual">🥖</div>
+          <div class="card-info">
+            <h3>Ciabatta</h3>
+            <p>High-hydration Italian dough, airy holes, crisp thin crust, olive oil finish</p>
+            <div class="card-meta">
+              <div class="card-detail"><span>600g</span></div>
+              <div class="card-detail"><span>00 Flour</span></div>
+            </div>
+            <div class="card-footer">
+              <span class="price">$7</span>
+              <button class="btn-add" id="add-ciabatta">Add to Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROLLS -->
+        <div class="bread-card" data-tab="rolls" id="card-baguette" style="display:none">
+          <div class="card-tag">DAILY</div>
+          <div class="card-visual">🥖</div>
+          <div class="card-info">
+            <h3>French Baguette</h3>
+            <p>Classic poolish method, shatteringly crisp crust, soft feathery interior</p>
+            <div class="card-meta">
+              <div class="card-detail"><span>300g</span></div>
+              <div class="card-detail"><span>T65 Flour</span></div>
+            </div>
+            <div class="card-footer">
+              <span class="price">$4</span>
+              <button class="btn-add" id="add-baguette">Add to Order</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bread-card" data-tab="rolls" id="card-brioche" style="display:none">
+          <div class="card-visual">🧈</div>
+          <div class="card-info">
+            <h3>Brioche Rolls</h3>
+            <p>Butter-rich, egg-washed, golden, pillow-soft — sold in packs of 4</p>
+            <div class="card-meta">
+              <div class="card-detail"><span>Pack of 4</span></div>
+              <div class="card-detail"><span>Enriched Dough</span></div>
+            </div>
+            <div class="card-footer">
+              <span class="price">$7</span>
+              <button class="btn-add" id="add-brioche">Add to Order</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bread-card" data-tab="rolls" id="card-dinner-rolls" style="display:none">
+          <div class="card-visual">🫓</div>
+          <div class="card-info">
+            <h3>Dinner Rolls</h3>
+            <p>Soft, fluffy pull-apart rolls with a touch of honey and sea salt</p>
+            <div class="card-meta">
+              <div class="card-detail"><span>Pack of 6</span></div>
+              <div class="card-detail"><span>Enriched Dough</span></div>
+            </div>
+            <div class="card-footer">
+              <span class="price">$8</span>
+              <button class="btn-add" id="add-dinner-rolls">Add to Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SPECIALTY -->
+        <div class="bread-card" data-tab="specialty" id="card-focaccia" style="display:none">
+          <div class="card-tag">HOT</div>
+          <div class="card-visual">🫒</div>
+          <div class="card-info">
+            <h3>Rosemary Focaccia</h3>
+            <p>Olive oil-soaked, dimpled, topped with rosemary and Maldon sea salt</p>
+            <div class="card-meta">
+              <div class="card-detail"><span>Half Sheet</span></div>
+              <div class="card-detail"><span>Extra Virgin Olive Oil</span></div>
+            </div>
+            <div class="card-footer">
+              <span class="price">$12</span>
+              <button class="btn-add" id="add-focaccia">Add to Order</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bread-card" data-tab="specialty" id="card-challah" style="display:none">
+          <div class="card-tag new">FRIDAY</div>
+          <div class="card-visual">✡️</div>
+          <div class="card-info">
+            <h3>Challah</h3>
+            <p>Braided egg bread, honey-sweet, available Fridays only — pre-order required</p>
+            <div class="card-meta">
+              <div class="card-detail"><span>600g</span></div>
+              <div class="card-detail"><span>Fridays Only</span></div>
+            </div>
+            <div class="card-footer">
+              <span class="price">$11</span>
+              <button class="btn-add" id="add-challah">Add to Order</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bread-card" data-tab="specialty" id="card-olive" style="display:none">
+          <div class="card-visual">🫒</div>
+          <div class="card-info">
+            <h3>Olive & Herb Loaf</h3>
+            <p>Kalamata olives, thyme, and roasted garlic folded through a sourdough base</p>
+            <div class="card-meta">
+              <div class="card-detail"><span>700g</span></div>
+              <div class="card-detail"><span>Sourdough Base</span></div>
+            </div>
+            <div class="card-footer">
+              <span class="price">$13</span>
+              <button class="btn-add" id="add-olive">Add to Order</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+    <div class="container about-grid">
+      <div class="about-img-col">
+        <div class="about-img-wrap">
+          <img src="bread_menu.jpg" alt="Our artisan bread selection" class="about-img" />
+        </div>
+        <div class="about-stat-card" id="about-stat">
+          <div class="about-stat-num">5am</div>
+          <div class="about-stat-label">When baking starts, so you get it fresh</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="section-tag">— Our Story —</p>
+        <h2 class="section-title">Started with one recipe.<br /><em>Perfected over years.</em></h2>
+        <p>The Daily Crust was born out of a simple frustration: why can't you get truly good bread at work? Not supermarket bread, not reheated bread — <em>real</em> bread, made with care, the same morning you eat it.</p>
+        <p>We mix and shape every loaf by hand. Our sourdough starter has been alive for three years. We use stoneground flour milled in small batches, and we never add anything you can't pronounce.</p>
+        <div class="process-steps">
+          <div class="step" id="step-mix">
+            <div class="step-num">01</div>
+            <div><strong>Mix & Ferment</strong><p>Dough mixes at 9pm. Cold ferment overnight for deep flavour.</p></div>
+          </div>
+          <div class="step" id="step-shape">
+            <div class="step-num">02</div>
+            <div><strong>Shape by Hand</strong><p>Each loaf shaped at 4am by our bakers. No machines, no shortcuts.</p></div>
+          </div>
+          <div class="step" id="step-bake">
+            <div class="step-num">03</div>
+            <div><strong>Stone Deck Bake</strong><p>Into the oven at 5am. Out by 7am. At your desk by 8am.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section id="schedule" class="schedule-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">— Weekly Bake Schedule —</p>
+        <h2 class="section-title">Fresh Every Day</h2>
+        <p class="section-sub">Different breads rotate through the week. Pre-order by 3pm the day before.</p>
+      </div>
+      <div class="schedule-grid">
+        <div class="day-card today" id="day-mon">
+          <div class="day-label">MON</div>
+          <ul>
+            <li>Country Sourdough</li>
+            <li>Baguette</li>
+            <li>Dinner Rolls</li>
+          </ul>
+        </div>
+        <div class="day-card" id="day-tue">
+          <div class="day-label">TUE</div>
+          <ul>
+            <li>Dark Rye</li>
+            <li>Ciabatta</li>
+            <li>Brioche Rolls</li>
+          </ul>
+        </div>
+        <div class="day-card" id="day-wed">
+          <div class="day-label">WED</div>
+          <ul>
+            <li>Multigrain</li>
+            <li>Focaccia</li>
+            <li>Sourdough</li>
+          </ul>
+        </div>
+        <div class="day-card" id="day-thu">
+          <div class="day-label">THU</div>
+          <ul>
+            <li>Olive & Herb</li>
+            <li>Baguette</li>
+            <li>Dinner Rolls</li>
+          </ul>
+        </div>
+        <div class="day-card highlight" id="day-fri">
+          <div class="day-label">FRI ✨</div>
+          <ul>
+            <li>Challah (pre-order)</li>
+            <li>Ciabatta</li>
+            <li>Brioche Rolls</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER -->
+  <section id="order" class="order-section">
+    <div class="order-bg"></div>
+    <div class="container order-inner">
+      <div class="order-text">
+        <p class="section-tag">— Pre-Order —</p>
+        <h2>Reserve yours<br />before 3pm today</h2>
+        <p>Quantities are limited. Pre-orders guarantee your loaf. Walk-ins welcome while stock lasts.</p>
+        <div class="order-contacts">
+          <a href="mailto:bread@thedailycrust.com" class="contact-chip" id="email-order">📧 bread@thedailycrust.com</a>
+          <a href="tel:+15559876543" class="contact-chip" id="phone-order">📞 +1 (555) 987-6543</a>
+        </div>
+      </div>
+      <form class="order-form" id="order-form">
+        <h3>Quick Pre-Order</h3>
+        <div class="form-group">
+          <label for="order-name">Your Name</label>
+          <input type="text" id="order-name" placeholder="Jane Smith" required />
+        </div>
+        <div class="form-group">
+          <label for="order-bread">Bread Choice</label>
+          <select id="order-bread">
+            <option>Country Sourdough — $9</option>
+            <option>Dark Rye — $8</option>
+            <option>Seeded Multigrain — $10</option>
+            <option>Ciabatta — $7</option>
+            <option>French Baguette — $4</option>
+            <option>Brioche Rolls (×4) — $7</option>
+            <option>Rosemary Focaccia — $12</option>
+            <option>Olive & Herb Loaf — $13</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="order-day">Pick-up Day</label>
+          <select id="order-day">
+            <option>Tomorrow</option>
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thursday</option>
+            <option>Friday</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-submit" id="form-submit">Reserve My Loaf 🌾</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">🌾 THE DAILY CRUST</div>
+        <p>Handcrafted bread for people who care about what they eat.</p>
+        <div class="footer-socials">
+          <a href="#" id="ig-link" aria-label="Instagram">📸</a>
+          <a href="#" id="fb-link" aria-label="Facebook">👥</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Breads</h4>
+        <ul>
+          <li><a href="#menu">Loaves</a></li>
+          <li><a href="#menu">Rolls & Buns</a></li>
+          <li><a href="#menu">Specialty</a></li>
+          <li><a href="#schedule">Weekly Schedule</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Find Us</h4>
+        <ul>
+          <li>Your Workplace Lobby</li>
+          <li>Mon–Fri: 7:30am – 10am</li>
+          <li>(or until sold out)</li>
+          <li><a href="tel:+15559876543">+1 (555) 987-6543</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Allergens</h4>
+        <ul>
+          <li>Contains: Gluten, Eggs</li>
+          <li>Some items: Dairy</li>
+          <li>Made in a kitchen that handles nuts</li>
+          <li><a href="mailto:bread@thedailycrust.com">Ask us anything</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 The Daily Crust · Baked with love · bread.nexalibre.com</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast">
+    <span>🌾</span><span id="toast-msg">Added to your order!</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

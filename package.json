@@ -1,0 +1,13 @@
+{
+  "name": "bread-shop",
+  "version": "1.0.0",
+  "description": "The Daily Crust — Artisan Bread Store",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
