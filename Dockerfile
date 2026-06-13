@@ -1,9 +1,6 @@
-FROM node:22-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm install --omit=dev
-COPY . .
-RUN mkdir -p /app/data
-VOLUME /app/data
-EXPOSE 3000
-CMD ["npm", "start"]
+FROM postgres:16-alpine
+ENV POSTGRES_DB=burgers
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=postgrespassword
+VOLUME /var/lib/postgresql/data
+EXPOSE 5432
