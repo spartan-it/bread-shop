@@ -3,12 +3,18 @@ const path = require('path');
 const fs = require('fs');
 
 const app = express();
-const dbPath = path.join(__dirname, 'orders.json');
+const dbPath = '/app/data/orders.json';
+
+// Ensure the directory exists
+const dbDir = path.dirname(dbPath);
+if (!fs.existsSync(dbDir)) {
+  fs.mkdirSync(dbDir, { recursive: true });
+}
 
 // Initialize the orders.json "database" file if it doesn't exist
 if (!fs.existsSync(dbPath)) {
   fs.writeFileSync(dbPath, JSON.stringify([]));
-  console.log("Initialized database file orders.json");
+  console.log("Initialized database file: " + dbPath);
 }
 
 app.use(express.json());
