@@ -56,6 +56,25 @@ app.post('/api/orders', (req, res) => {
   }
 });
 
+// API Endpoint to trigger hot-update of code via git pull & server restart
+app.post('/api/update-code', (req, res) => {
+  console.log("Hot-updating code via git pull...");
+  const { exec } = require('child_process');
+  exec('git fetch origin main && git reset --hard origin/main && npm install --omit=dev', (err, stdout, stderr) => {
+    if (err) {
+      console.error('Git update failed:', err);
+      return res.status(500).json({ error: 'Git update failed', details: stderr });
+    }
+    console.log('Git pull output:', stdout);
+    res.json({ message: 'Code updated successfully. Restarting server...' });
+    
+    // Gracefully exit process after 1 second, letting the shell script loop restart the server
+    setTimeout(() => {
+      process.exit(0);
+    }, 1000);
+  });
+});
+
 // Serve frontend for all other routes
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
