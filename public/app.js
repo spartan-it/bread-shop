@@ -140,6 +140,10 @@ async function fetchOrders() {
     
     if (data.length === 0) {
       ordersList.innerHTML = '<p style="text-align: center; color: var(--text-muted); font-style: italic;">No orders placed yet.</p>';
+      const statsContainer = document.getElementById('orders-stats');
+      if (statsContainer) {
+        statsContainer.innerHTML = '<p style="text-align: center; color: var(--text-muted); font-style: italic;">No orders placed yet.</p>';
+      }
       return;
     }
     
@@ -163,6 +167,44 @@ async function fetchOrders() {
       `;
       ordersList.appendChild(orderDiv);
     });
+
+    // Aggregate and render statistics
+    const statsContainer = document.getElementById('orders-stats');
+    if (statsContainer) {
+      const counts = {
+        'Ember Double Cheeseburger': 0,
+        'Smokehouse Bacon BBQ': 0,
+        'Hot Honey Bird': 0,
+        'Truffle Umami Smash': 0
+      };
+      
+      data.forEach(o => {
+        if (counts[o.burger] !== undefined) {
+          counts[o.burger]++;
+        } else {
+          counts[o.burger] = 1;
+        }
+      });
+      
+      const total = data.length;
+      let html = `<p style="text-align: center; font-weight: bold; margin-bottom: 0.5rem; color: var(--amber);">Total Orders: ${total}</p>`;
+      
+      Object.entries(counts).forEach(([burger, count]) => {
+        const percentage = total > 0 ? (count / total) * 100 : 0;
+        html += `
+          <div style="margin-bottom: 0.5rem;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 0.2rem;">
+              <span>${burger}</span>
+              <span>${count} (${Math.round(percentage)}%)</span>
+            </div>
+            <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+              <div style="width: ${percentage}%; height: 100%; background: #f7a300; border-radius: 4px; transition: width 0.5s ease-out;"></div>
+            </div>
+          </div>
+        `;
+      });
+      statsContainer.innerHTML = html;
+    }
   } catch (err) {
     console.error('Failed to fetch orders:', err);
   }
