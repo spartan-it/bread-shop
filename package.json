@@ -1,0 +1,13 @@
+{
+  "name": "burger-shop-live",
+  "version": "1.0.0",
+  "description": "Premium burger shop website with live orders database",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
